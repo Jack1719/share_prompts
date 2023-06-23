@@ -1,6 +1,7 @@
 import React from "react";
 import "@styles/globals.css";
 import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Share Prompts",
@@ -15,14 +16,16 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <div className="main">
-          <div className="gradient" />
-        </div>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
 
-        <div className="app">
-          <Nav />
-          {children}
-        </div>
+          <div className="app">
+            <Nav />
+            {children}
+          </div>
+        </Provider>
       </body>
     </html>
   );
